@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>bookdown: Authoring Books and Technical Documents with R Markdown</title>
+  <meta name="description" content="A guide to authoring books with R Markdown, including how to generate figures and tables, and insert cross-references, citations, HTML widgets, and Shiny apps in R Markdown. The book can be exported to HTML, PDF, and e-books (e.g. EPUB). The book style is customizable. You can easily write and preview the book in RStudio IDE or other editors, and host the book wherever you want (e.g. bookdown.org).">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="bookdown: Authoring Books and Technical Documents with R Markdown">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://bookdown.org/yihui/bookdown/">
+  <meta property="og:image" content="https://bookdown.org/yihui/bookdown/images/cover.jpg">
+  <meta property="og:description" content="A guide to authoring books with R Markdown, including how to generate figures and tables, and insert cross-references, citations, HTML widgets, and Shiny apps in R Markdown. The book can be exported to HTML, PDF, and e-books (e.g. EPUB). The book style is customizable. You can easily write and preview the book in RStudio IDE or other editors, and host the book wherever you want (e.g. bookdown.org).">
+  <meta name="github-repo" content="rstudio/bookdown">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="bookdown: Authoring Books and Technical Documents with R Markdown">
+  
+  <meta name="twitter:description" content="A guide to authoring books with R Markdown, including how to generate figures and tables, and insert cross-references, citations, HTML widgets, and Shiny apps in R Markdown. The book can be exported to HTML, PDF, and e-books (e.g. EPUB). The book style is customizable. You can easily write and preview the book in RStudio IDE or other editors, and host the book wherever you want (e.g. bookdown.org).">
+  <meta name="twitter:image" content="https://bookdown.org/yihui/bookdown/images/cover.jpg">
+
+<meta name="author" content="Yihui Xie">
+
+
+<meta name="date" content="2019-02-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/why-read-this-book.html">
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/jquery.min.js"></script>
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/style.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-table.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-bookdown.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-highlight.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-search.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-fontsettings.css" rel="stylesheet">
+
+
+
+
+
+
+
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/htmlwidgets.js"></script>
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/datatables-crosstalk.css" rel="stylesheet">
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/datatables.js"></script>
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/jquery.dataTables.min.css" rel="stylesheet">
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/jquery.dataTables.min.js"></script>
+<link href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/crosstalk.css" rel="stylesheet">
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/style(1).css" type="text/css">
+<script type="text/javascript" src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+
+
+
+  <div class="book without-animation with-summary   font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/">Authoring Books with R Markdown</a></li>
+
+<li class="divider"></li>
+<li class="chapter active" data-level="" data-path="index.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="why-read-this-book.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/why-read-this-book.html"><i class="fa fa-check"></i>Why read this book</a></li>
+<li class="chapter" data-level="" data-path="structure-of-the-book.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/structure-of-the-book.html"><i class="fa fa-check"></i>Structure of the book</a></li>
+<li class="chapter" data-level="" data-path="software-information-and-conventions.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/software-information-and-conventions.html" title="Software information and conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+<li class="chapter" data-level="" data-path="acknowledgments.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/acknowledgments.html"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="motivation.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/motivation.html"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="get-started.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/get-started.html"><i class="fa fa-check"></i><b>1.2</b> Get started</a></li>
+<li class="chapter" data-level="1.3" data-path="usage.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/usage.html"><i class="fa fa-check"></i><b>1.3</b> Usage</a></li>
+<li class="chapter" data-level="1.4" data-path="new-session.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/new-session.html"><i class="fa fa-check"></i><b>1.4</b> Two rendering approaches</a></li>
+<li class="chapter" data-level="1.5" data-path="some-tips.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/some-tips.html"><i class="fa fa-check"></i><b>1.5</b> Some tips</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="components.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/components.html"><i class="fa fa-check"></i><b>2</b> Components</a><ul>
+<li class="chapter" data-level="2.1" data-path="markdown-syntax.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-syntax.html"><i class="fa fa-check"></i><b>2.1</b> Markdown syntax</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="markdown-syntax.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-syntax.html#inline-formatting"><i class="fa fa-check"></i><b>2.1.1</b> Inline formatting</a></li>
+<li class="chapter" data-level="2.1.2" data-path="markdown-syntax.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-syntax.html#block-level-elements"><i class="fa fa-check"></i><b>2.1.2</b> Block-level elements</a></li>
+<li class="chapter" data-level="2.1.3" data-path="markdown-syntax.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-syntax.html#math-expressions"><i class="fa fa-check"></i><b>2.1.3</b> Math expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="markdown-extensions-by-bookdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-extensions-by-bookdown.html" title="2.2 Markdown extensions by bookdown"><i class="fa fa-check"></i><b>2.2</b> Markdown extensions by bookdown</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="markdown-extensions-by-bookdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-extensions-by-bookdown.html#equations" title="2.2.1 Number and reference equations"><i class="fa fa-check"></i><b>2.2.1</b> Number and reference equations</a></li>
+<li class="chapter" data-level="2.2.2" data-path="markdown-extensions-by-bookdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-extensions-by-bookdown.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="2.2.3" data-path="markdown-extensions-by-bookdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-extensions-by-bookdown.html#special-headers"><i class="fa fa-check"></i><b>2.2.3</b> Special headers</a></li>
+<li class="chapter" data-level="2.2.4" data-path="markdown-extensions-by-bookdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-extensions-by-bookdown.html#text-references"><i class="fa fa-check"></i><b>2.2.4</b> Text references</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="r-code.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/r-code.html"><i class="fa fa-check"></i><b>2.3</b> R code</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/figures.html"><i class="fa fa-check"></i><b>2.4</b> Figures</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/tables.html"><i class="fa fa-check"></i><b>2.5</b> Tables</a></li>
+<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/cross-references.html"><i class="fa fa-check"></i><b>2.6</b> Cross-references</a></li>
+<li class="chapter" data-level="2.7" data-path="custom-blocks.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/custom-blocks.html"><i class="fa fa-check"></i><b>2.7</b> Custom blocks</a></li>
+<li class="chapter" data-level="2.8" data-path="citations.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/citations.html"><i class="fa fa-check"></i><b>2.8</b> Citations</a></li>
+<li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/latex-index.html"><i class="fa fa-check"></i><b>2.9</b> Index</a></li>
+<li class="chapter" data-level="2.10" data-path="html-widgets.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/html-widgets.html"><i class="fa fa-check"></i><b>2.10</b> HTML widgets</a></li>
+<li class="chapter" data-level="2.11" data-path="web-pages-and-shiny-apps.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/web-pages-and-shiny-apps.html"><i class="fa fa-check"></i><b>2.11</b> Web pages and Shiny apps</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="output-formats.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/output-formats.html"><i class="fa fa-check"></i><b>3</b> Output Formats</a><ul>
+<li class="chapter" data-level="3.1" data-path="html.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/html.html"><i class="fa fa-check"></i><b>3.1</b> HTML</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="html.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/html.html#gitbook-style"><i class="fa fa-check"></i><b>3.1.1</b> GitBook style</a></li>
+<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/html.html#bootstrap-style"><i class="fa fa-check"></i><b>3.1.2</b> Bootstrap style</a></li>
+<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/html.html#tufte-style"><i class="fa fa-check"></i><b>3.1.3</b> Tufte style</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="latexpdf.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/latexpdf.html"><i class="fa fa-check"></i><b>3.2</b> LaTeX/PDF</a></li>
+<li class="chapter" data-level="3.3" data-path="e-books.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/e-books.html"><i class="fa fa-check"></i><b>3.3</b> E-Books</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="e-books.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/e-books.html#epub"><i class="fa fa-check"></i><b>3.3.1</b> EPUB</a></li>
+<li class="chapter" data-level="3.3.2" data-path="e-books.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/e-books.html#mobi"><i class="fa fa-check"></i><b>3.3.2</b> MOBI</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="a-single-document.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/a-single-document.html"><i class="fa fa-check"></i><b>3.4</b> A single document</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="customization.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/customization.html"><i class="fa fa-check"></i><b>4</b> Customization</a><ul>
+<li class="chapter" data-level="4.1" data-path="yaml-options.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/yaml-options.html"><i class="fa fa-check"></i><b>4.1</b> YAML options</a></li>
+<li class="chapter" data-level="4.2" data-path="theming.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/theming.html"><i class="fa fa-check"></i><b>4.2</b> Theming</a></li>
+<li class="chapter" data-level="4.3" data-path="templates.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/templates.html"><i class="fa fa-check"></i><b>4.3</b> Templates</a></li>
+<li class="chapter" data-level="4.4" data-path="configuration.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/configuration.html"><i class="fa fa-check"></i><b>4.4</b> Configuration</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/internationalization.html"><i class="fa fa-check"></i><b>4.5</b> Internationalization</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="editing.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/editing.html"><i class="fa fa-check"></i><b>5</b> Editing</a><ul>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> Build the book</a></li>
+<li class="chapter" data-level="5.2" data-path="preview-a-chapter.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/preview-a-chapter.html"><i class="fa fa-check"></i><b>5.2</b> Preview a chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="serve-the-book.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/serve-the-book.html"><i class="fa fa-check"></i><b>5.3</b> Serve the book</a></li>
+<li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
+<li class="chapter" data-level="5.5" data-path="collaboration.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/collaboration.html"><i class="fa fa-check"></i><b>5.5</b> Collaboration</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="publishing.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/publishing.html"><i class="fa fa-check"></i><b>6</b> Publishing</a><ul>
+<li class="chapter" data-level="6.1" data-path="rstudio-connect.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/rstudio-connect.html"><i class="fa fa-check"></i><b>6.1</b> RStudio Connect</a></li>
+<li class="chapter" data-level="6.2" data-path="github.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/github.html"><i class="fa fa-check"></i><b>6.2</b> GitHub</a></li>
+<li class="chapter" data-level="6.3" data-path="publishers.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/publishers.html"><i class="fa fa-check"></i><b>6.3</b> Publishers</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="software-tools.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/software-tools.html"><i class="fa fa-check"></i><b>A</b> Software Tools</a><ul>
+<li class="chapter" data-level="A.1" data-path="r-and-r-packages.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/r-and-r-packages.html"><i class="fa fa-check"></i><b>A.1</b> R and R packages</a></li>
+<li class="chapter" data-level="A.2" data-path="pandoc.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/pandoc.html"><i class="fa fa-check"></i><b>A.2</b> Pandoc</a></li>
+<li class="chapter" data-level="A.3" data-path="latex.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/latex.html"><i class="fa fa-check"></i><b>A.3</b> LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="software-usage.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/software-usage.html"><i class="fa fa-check"></i><b>B</b> Software Usage</a><ul>
+<li class="chapter" data-level="B.1" data-path="knitr.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/knitr.html"><i class="fa fa-check"></i><b>B.1</b> knitr</a></li>
+<li class="chapter" data-level="B.2" data-path="r-markdown.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/r-markdown.html"><i class="fa fa-check"></i><b>B.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="faq.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/faq.html"><i class="fa fa-check"></i><b>C</b> FAQ</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body fixed">
+      <div class="body-inner">
+        <div class="book-header fixed" role="navigation" style="background-color: rgb(255, 255, 255);">
+          <a class="btn pull-left js-toolbar-action" aria-label="" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-align-justify"></i></a><a class="btn pull-left js-toolbar-action" aria-label="Search" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-search"></i></a><div class="dropdown pull-right  js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Share" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-share-alt"></i></a><div class="dropdown-menu dropdown-left"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-6 ">Facebook</button><button class="button size-6 ">Google+</button><button class="button size-6 ">Twitter</button><button class="button size-6 ">LinkedIn</button><button class="button size-6 ">Weibo</button><button class="button size-6 ">Instapaper</button></div></div></div><a class="btn pull-right js-toolbar-action" aria-label="" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-github"></i></a><a class="btn pull-right js-toolbar-action" aria-label="" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-twitter"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><a class="btn pull-left js-toolbar-action" aria-label="Edit" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-edit"></i></a><div class="dropdown pull-left  js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Download" href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/index.html#"><i class="fa fa-download"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-1 ">PDF</button></div><div class="buttons"><button class="button size-1 ">EPUB</button></div><div class="buttons"><button class="button size-1 ">MOBI</button></div></div></div><h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/">bookdown: Authoring Books and Technical Documents with R Markdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">bookdown: Authoring Books and Technical Documents with R Markdown</h1>
+<p class="author"><em>Yihui Xie</em></p>
+<p class="date"><em>2019-02-08</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered">
+<h1>Preface</h1>
+<p><a href="https://www.crcpress.com/product/isbn/9781138700109" target="_blank"><img src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/cover.jpg" style="display: block; margin: auto;"></a></p>
+<p>This short book introduces an R package, <strong>bookdown</strong>, to change your workflow of writing books. It should be technically easy to write a book, visually pleasant to view the book, fun to interact with the book, convenient to navigate through the book, straightforward for readers to contribute or leave feedback to the book author(s), and more importantly, authors should not always be distracted by typesetting details.</p>
+<p>The <strong>bookdown</strong> package is built on top of R Markdown (<a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com</a>), and inherits the simplicity of the Markdown syntax (you can learn the basics in five minutes; see Section <a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/markdown-syntax.html#markdown-syntax">2.1</a>), as well as the possibility of multiple types of output formats (PDF/HTML/Word/…). It has also added features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and imported the GitBook style (<a href="https://www.gitbook.com/" class="uri">https://www.gitbook.com</a>) to create elegant and appealing HTML book pages. This book itself is an example of how you can produce a book from a series of R Markdown documents, and both the printed version and the online version can look professional. You can find more examples at <a href="https://bookdown.org/" class="uri">https://bookdown.org</a>.</p>
+<p><a href="https://github.com/rstudio/bookdown" target="_blank"><img src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/logo.png" style="display: block; margin: auto;"></a></p>
+<p>Despite the package name containing the word “book”, <strong>bookdown</strong> is not only for books. The “book” can be anything that consists of multiple R Markdown documents meant to be read in a linear sequence, such as course handouts, study notes, a software manual, a thesis, or even a diary. In fact, many <strong>bookdown</strong> features apply to single R Markdown documents as well (see Section <a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/a-single-document.html#a-single-document">3.4</a>).</p>
+<p><img src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/by-nc-sa.png" alt="Creative Commons License"><br>
+The online version of this book is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. You can purchase a hardcopy from <a href="https://www.crcpress.com/product/isbn/9781138700109">Chapman &amp; Hall</a> or Amazon.</p> 
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="file://localhost/Users/mchiovaro/Documents/github/BD/bookdown-master/inst/examples/_book/why-read-this-book.html" class="navigation navigation-next navigation-unique" aria-label="Next page" style="margin-right: 15px;"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/app.min.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/lunr.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-search.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-sharing.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-fontsettings.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/plugin-bookdown.js"></script>
+<script src="./bookdown_ Authoring Books and Technical Documents with R Markdown_files/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub", "bookdown.mobi"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+
+</body></html>
